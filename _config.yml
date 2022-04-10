@@ -21,7 +21,7 @@
 title: Tebogo Tema
 email: dime.tema@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  feelthedimez.me is a personal blog website that I use to document my journey, 
+  Tebogo Tema is a software engineer in progress. The purpose of this blog/website is to document my journey, 
   feelings, thoughts and everything inbetween regarding software & design.
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://tebogotema.me" # the base hostname & protocol for your site, e.g. http://example.com
