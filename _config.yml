@@ -23,8 +23,8 @@ email: dime.tema@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   feelthedimez.me is a personal blog website that I use to document my journey, 
   feelings, thoughts and everything inbetween regarding software & design.
-baseurl: "/feelthedimez.me" # the subpath of your site, e.g. /blog
-url: "https://feelthedimez.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "http://tebogotema.me" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: feelthedimez
 linkedin_username: Tebogo Tema
 github_username:  feelthedimez
