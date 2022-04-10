@@ -68,7 +68,7 @@
 .bottom-nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
     > .bottom-nav-links a {
       color: #313030;
@@ -76,6 +76,13 @@
 
     > .bottom-nav-links a:first-child {
       padding-right: 25px;
+    }
+
+    > .bottom-nav-links a:last-child {
+      color: rgb(74, 74, 253);
+        &:hover {
+
+        }
     }
 }
 
@@ -153,6 +160,7 @@ input:checked + .slider:before {
   @include relative-font-size(0.9375);
   display: flex;
   color: $grey-color;
+  padding-top: 20px;
   justify-content: center;
   align-items: center;
   margin-left: -$spacing-unit / 2;

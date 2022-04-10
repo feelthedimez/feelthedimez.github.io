@@ -1,6 +1,5 @@
 ---
 layout: post
-tags: [Tag 1, Tag 2]
 title:  "Welcome to Jekyll!"
 date:   2022-04-04 10:53:37 +0200
 categories: jekyll update
