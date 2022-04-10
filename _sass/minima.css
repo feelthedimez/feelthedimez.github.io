@@ -503,6 +503,10 @@ input:checked + .slider:before {
   margin-bottom: 30px;
 }
 
+.post-content p {
+  text-align: justify;
+}
+
 .post-content h2 {
   font-size: 32px;
 }

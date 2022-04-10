@@ -257,6 +257,10 @@ input:checked + .slider:before {
 .post-content {
   margin-bottom: $spacing-unit;
 
+  p {
+    text-align: justify;
+  }
+
   h2 {
     @include relative-font-size(2);
 
