@@ -8,7 +8,7 @@ Hi there, I don't know how you got here, but let me introduce myself weirdly. My
 
 I don't know what to touch in `Software Engineering` field, but for the past 2 years I've done a lot; and I can't say I have a specific field I am interested in, but I do almost everything. I enjoy both front end (not CSS lol) and a lot of backend coding.
 
-Anyway, as I am starting my professional career in `Software Engineering` as an intern for a very big company, I have decided to create a **blog/ webite** to document the whole thing; from the struggles and hardships I am going to face, the technologies I will be exposed to, learning methodologies, my obscure thoughts on certain topics and other infinite thing.
+Anyway, as I am starting my professional career in `Software Engineering` as an intern for a very big company, I have decided to create a **blog/ webite** to document the whole thing; from the struggles and hardships I am going to face, the technologies I will be exposed to, learning methodologies, my obscure thoughts on certain topics and other infinite things.
 
 It won't be limited to Software Engineering, I will cover a range of topics in different fields; creativity, photography, design, music, study methods, and maybe a bit of markerting.
 
