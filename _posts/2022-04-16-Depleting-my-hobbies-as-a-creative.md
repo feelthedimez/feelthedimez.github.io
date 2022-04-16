@@ -7,7 +7,7 @@ tags: [Hobbies, Design, Creative]
 
 I often find myself busy in most cases; whether I am designing, coding, reading something, researching, or watching YouTube - I am occupied almost every time. I always have a hobby I tend to monetize.
 
-It all started with design. I started off creating cartoon illustrations of my friends; I considered it a fun activity. Then I went to charging R50 per cartoon because I need airtime to buy mobile data to access the internet everyday. I then found myself buying online courses on Udemy to learn how to design and use Adobe Illustrator efficiently.
+It all started with design. I started off creating cartoon illustrations of my friends; I considered it a fun activity. Then I went to charging R50 per cartoon because I needed airtime to buy mobile data to access the internet everyday. I then found myself buying online courses on Udemy to learn how to design and use Adobe Illustrator efficiently.
 
 From creating cartoons, I decided to go on a Graphic Design route and design logos for small businesses. And that was my start on monetizing a hobby; it later became a side hustle and then a job. I wasn't doing it for fun or for my own amusement or to impress my friends. I was doing it to create some money on the side, crazy!
 
