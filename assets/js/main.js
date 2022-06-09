@@ -7,10 +7,10 @@ if (userDarkMode === 'darkMode') toggleDarkMode();
 
 const toggleLightMode = () => localStorage.setItem('darkMode', null);
 
-slider.addEventListener('click', () => {
-    userDarkMode = localStorage.getItem('darkMode');
-    if (userDarkMode !== 'onDark' && slider.checked ) toggleDarkMode()
-    else toggleLightMode();
-});
+// slider.addEventListener('click', () => {
+//     userDarkMode = localStorage.getItem('darkMode');
+//     if (userDarkMode !== 'onDark' && slider.checked ) toggleDarkMode()
+//     else toggleLightMode();
+// });
 
 
