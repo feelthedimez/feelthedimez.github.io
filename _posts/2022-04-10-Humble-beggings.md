@@ -16,3 +16,4 @@ It won't be limited to Software Engineering, I will cover a range of topics in d
 So, if you will be occasionally reading my blogs, just don't take my words as final - I am really sure my thoughts and mindset will be super wrong. 
 
 Anyway, these are my humble beginnings.
+
