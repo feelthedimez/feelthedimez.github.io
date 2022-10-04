@@ -7,33 +7,43 @@ layout: default
     <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}
 
+  <div class="welcome-bio">
+    <h1 class="welcome-bio__header">Hi, I'm Tebogo👋</h1>
+    <p class="welcome-bio__content">A Software Engineer, and a creative designer. I write about my experiences, share knowledge and write tutorials on this website.</p>  
+  </div>
+  
   {{ content }}
   
   {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "All posts" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        
-        {% if post.tags.size > 0 %}
-        <span class="post-meta tags">{{ post.tags | sort | join: " | " }} </span>
-        {% endif %}
-
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        <p>{{ post.content | truncatewords: 45 }} <a href="{{ post.url | relative_url }}"><span class="read-more">Read more</span></a></p>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
-
+    <div class="all_posts">
+      <h2 class="post-list-heading">{{ page.list_title | default: "All posts" }}</h2>
+      <ul class="post-list">
+        {%- for post in site.posts -%}
+        <li>
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          <span class="post-meta">{{ post.date | date: date_format }}</span>
+          
+          {% if post.tags.size > 0 %}
+          <span class="post-meta tags">{{ post.tags | sort | join: " | " }} </span>
+          {% endif %}
+  
+          <h3>
+            <a class="post-link" href="{{ post.url | relative_url }}">
+              {{ post.title | escape }}
+            </a>
+          </h3>
+          <p>{{ post.content | truncatewords: 45 }} 
+            <a href="{{ post.url | relative_url }}">
+              <span class="read-more">Read more</span>
+            </a>
+          </p>
+          {%- if site.show_excerpts -%}
+            {{ post.excerpt }}
+          {%- endif -%}
+        </li>
+        {%- endfor -%}
+      </ul>
+    </div>
   {%- endif -%}
 
 </div>

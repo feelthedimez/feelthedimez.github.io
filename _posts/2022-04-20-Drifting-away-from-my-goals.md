@@ -16,3 +16,4 @@ If you're like me, you had a goal in mind, but never executed it. Does it bug yo
 Yeah, I'll pass on that. I cannot afford to do that. We should accomplish everything we set our minds to.
 
 Imagine doing something you planned to do, but at your highest degree of capability? Imagine the results, crazy!
+
