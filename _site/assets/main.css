@@ -82,7 +82,7 @@ table td { border: 1px solid #e8e8e8; }
 .contact-list, .social-media-list { list-style: none; margin-left: 0; }
 
 .bottom-nav { display: flex; align-items: center; justify-content: center; }
-.bottom-nav > .bottom-nav-links a { color: #313030; }
+.bottom-nav > .bottom-nav-links a { color: #E8DFDF; }
 .bottom-nav > .bottom-nav-links a:first-child { padding-right: 25px; }
 .bottom-nav > .bottom-nav-links a:last-child { color: #4a4afd; }
 
