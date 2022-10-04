@@ -3,6 +3,7 @@ layout: post
 title:  "Humble beginnings"
 date:   2022-04-04 19:08:00 +0200
 tags: [First Post, Start, Beginning]
+permalink: /:title
 ---
 Hi there, I don't know how you got here, but let me introduce myself weirdly. My name is Tebogo Tema. I am a Junior Software Engineer and a self-taught freelance Graphic Designer. My graphic design work ranges from *UI* and some little bit of *UX*, some merch clothing design, identity systems and a bit of everything in Software engineering side. 
 
