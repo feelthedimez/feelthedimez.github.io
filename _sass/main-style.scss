@@ -12,12 +12,14 @@ $spacing-unit:     30px !default;
 
 $secondary-color: #273044;
 $dark-background-color: #08090D;
-
+$bright-color: #EA7C59;
 
 $text-color:       #E8DFDF !default;
-$text-color-dark: #E8DFDF;
+$text-color-light: #cfd7db;
+
+
 $background-color: #12151C !default;
-$background-color-dark: #E8DFDF;
+
 $brand-color:      #2a7ae2 !default;
 
 $grey-color:       #828282 !default;
@@ -32,18 +34,13 @@ $content-width:    800px !default;
 $on-palm:          600px !default;
 $on-laptop:        800px !default;
 
-// Use media queries like this:
-// @include media-query($on-palm) {
-//   .wrapper {
-//     padding-right: $spacing-unit / 2;
-//     padding-left: $spacing-unit / 2;
-//   }
-// }
+
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
     @content;
   }
 }
+
 
 @mixin relative-font-size($ratio) {
   font-size: $base-font-size * $ratio;
@@ -51,7 +48,7 @@ $on-laptop:        800px !default;
 
 // Import partials.
 @import
-  "minima/base",
-  "minima/layout",
-  "minima/syntax-highlighting"
+  "sass-style/base",
+  "sass-style/layout",
+  "sass-style/syntax-highlighting"
 ;

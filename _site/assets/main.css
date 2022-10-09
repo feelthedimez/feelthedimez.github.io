@@ -1,8 +1,6 @@
 /** Reset some basic elements */
 body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure { margin: 0; padding: 0; }
 
-u, .u { text-decoration: underline; text-underline-offset: 8px; text-decoration-color: #EA7C59; text-decoration-thickness: 3px; }
-
 /** Basic styling */
 body { font: 400 16px/1.5 "Poppins", sans-serif; color: #E8DFDF; background-color: #12151C; -webkit-text-size-adjust: 100%; -webkit-font-feature-settings: "kern" 1; -moz-font-feature-settings: "kern" 1; -o-font-feature-settings: "kern" 1; font-feature-settings: "kern" 1; font-kerning: normal; display: flex; min-height: 100vh; flex-direction: column; }
 
@@ -29,11 +27,13 @@ li > ul, li > ol { margin-bottom: 0; }
 h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
 /** Links */
-a { color: #2a7ae2; text-decoration: none; }
-a:visited { color: #1756a9; }
-a:hover { color: #E8DFDF; text-decoration: underline; }
+a { color: #E8DFDF; text-decoration: none; text-decoration-color: #EA7C59 !important; }
+a:visited { color: #cfd7db; }
+a:hover { color: #EA7C59; text-decoration: underline; }
 .social-media-list a:hover { text-decoration: none; }
 .social-media-list a:hover .username { text-decoration: underline; }
+
+.u { text-decoration-thickness: 3px; text-decoration: underline; text-underline-offset: 8px; text-decoration-color: #EA7C59 !important; }
 
 /** Blockquotes */
 blockquote { color: #828282; border-left: 4px solid #e8e8e8; padding-left: 15px; font-size: 18px; letter-spacing: -1px; font-style: italic; }
@@ -112,8 +112,6 @@ input:checked + .slider:before { -webkit-transform: translateX(26px); -ms-transf
 
 @media screen and (max-width: 600px) { .footer-col { display: flex; justify-content: center; align-items: center; width: -webkit-calc(100% - (30px / 2)); width: calc(100% - (30px / 2)); } }
 /** Page content */
-.post-text { color: yellow; }
-
 .page-content { padding: 30px 0; flex: 1; }
 
 .page-heading { font-size: 32px; }
@@ -127,7 +125,7 @@ input:checked + .slider:before { -webkit-transform: translateX(26px); -ms-transf
 
 .tags { float: right; }
 
-.post-link { display: block; font-size: 32px; }
+.post-link { display: block; font-size: 32px; color: #E8DFDF !important; }
 
 /** Posts */
 .post-header { margin-bottom: 30px; }
@@ -152,7 +150,7 @@ input:checked + .slider:before { -webkit-transform: translateX(26px); -ms-transf
 .welcome-bio__content { font-size: 28.8px; }
 
 .all_posts { margin: 50px 0; }
-.all_posts p { font-size: 21.6px; }
+.all_posts p { font-size: 21.6px; color: #cfd7db; }
 
 .highlight table td { padding: 5px; }
 
