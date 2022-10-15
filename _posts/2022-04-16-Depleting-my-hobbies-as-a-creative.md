@@ -3,6 +3,7 @@ layout: post
 title:  "Depleting my hobbies as a creative"
 date:   2022-04-16 23:15:00 +0200
 tags: [Hobbies, Design, Creative]
+permalink: /:title
 ---
 
 I often find myself busy in most cases; whether I am designing, coding, reading something, researching, or watching YouTube - I am occupied almost every time. I always have a hobby I tend to monetize.
