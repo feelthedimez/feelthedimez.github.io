@@ -8,7 +8,7 @@ permalink: /:title
 
 Well, this was unexpected. For the past 5 months, I have been in QA and Automation. As a profession, not that titles matter, but I have been a QA Enablement Software Engineer and an Automator—that's a mouthful. I will unpack what that means and what my sole responsibility is in a company.
 
-I joined the company I am at now, just before we started working, and was given the choice to choose a mentor and join their domain. I chose QA and automation (without knowing why because I chickened out of UI Dev). I then started training on how to automate using Java and Selenium. I did 3 types of testing and automation; API testing (backend), mobile app and web testing with Selenium and Appium.
+When I joined the company I am at now, just before we started working, I was given the choice to choose a mentor and join their domain. I chose QA and automation (without knowing why because I chickened out of UI Dev). I then started training on how to automate using Java and Selenium. I did 3 types of testing and automation; API testing (backend), mobile app and web testing with Selenium and Appium.
 
 ## What is Quality Assurance Enablement?
 
