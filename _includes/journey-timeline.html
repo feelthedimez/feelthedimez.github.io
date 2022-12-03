@@ -1,46 +1,23 @@
 <div class="timeline">
+    {% for journey in site.data.work_experience %}
     <div class="timeline-container primary">
         <div class="timeline-icon">
             <i class=""></i>
         </div>
         <div class="timeline-body">
-            <h4 class="timeline-title"><span class="badge">Primary</span></h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam necessitatibus numquam earum ipsa fugiat veniam suscipit, officiis repudiandae, eum recusandae neque dignissimos. Cum fugit laboriosam culpa, repellendus esse commodi deserunt.</p>
-            <p class="timeline-subtitle">1 Hours Ago</p>
+            <h3 class="timeline-title"><span class="badge">{{ journey.role }}</span></h3>
+            <h4 class="company-name">{{ journey.company_name }} | {{ journey.duration }}</h4>
+            <p class="description">{{ journey.description }}</p>
+            <p class="technology">Technologies: {{ journey.technologies }}</p>
+            <h3>Key Achievements:</h3>
+            {% for point in journey.key_achievements %}
+            <ul>
+                <li>{{ point }}</li>
+            </ul>
+            {% endfor %}
         </div>
     </div>
 
-    <div class="timeline-container primary">
-        <div class="timeline-icon">
-            <i class=""></i>
-        </div>
-        <div class="timeline-body">
-            <h4 class="timeline-title"><span class="badge">Primary</span></h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam necessitatibus numquam earum ipsa fugiat veniam suscipit, officiis repudiandae, eum recusandae neque dignissimos. Cum fugit laboriosam culpa, repellendus esse commodi deserunt.</p>
-            <p class="timeline-subtitle">1 Hours Ago</p>
-        </div>
-    </div>   
-
-    <div class="timeline-container primary">
-        <div class="timeline-icon">
-            <i class=""></i>
-        </div>
-        <div class="timeline-body">
-            <h4 class="timeline-title"><span class="badge">Primary</span></h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam necessitatibus numquam earum ipsa fugiat veniam suscipit, officiis repudiandae, eum recusandae neque dignissimos. Cum fugit laboriosam culpa, repellendus esse commodi deserunt.</p>
-            <p class="timeline-subtitle">1 Hours Ago</p>
-        </div>
-    </div>   
-
-    <div class="timeline-container primary">
-        <div class="timeline-icon">
-            <i class=""></i>
-        </div>
-        <div class="timeline-body">
-            <h4 class="timeline-title"><span class="badge">Primary</span></h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam necessitatibus numquam earum ipsa fugiat veniam suscipit, officiis repudiandae, eum recusandae neque dignissimos. Cum fugit laboriosam culpa, repellendus esse commodi deserunt.</p>
-            <p class="timeline-subtitle">1 Hours Ago</p>
-        </div>
-    </div>   
+    {% endfor %}
 
 </div>

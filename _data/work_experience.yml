@@ -1,0 +1,30 @@
+- company_name: Vodacom, SA
+  role: Software Engineer
+  duration: April 2022 - Present
+  description: I am currently in QAE (Quality Assurance Enablement) team. I am responsible for developing tools and processes 
+    that QAs use in order to deliver their daily tasks. We developed aninternal automation Framework and integrated it with Jenkins
+    build pipelines.
+  technologies: GIT, Java, Python, Jenkins, Docker, JavaScript, Jira, Agile Development, and more.
+  key_achievements: 
+    - I was fully involved in the development of the Vodacom Summer Project Campaign. The project is very intensive and I was 
+      responsible for interpreting business specs and automating the logic.
+    - Improved and developed an internal testing framework that is used by the QAs. It has been integrated with Jenkins build 
+      pipelines, and Allure reports.
+    - Helped a lot of people upskill in certain areas of their careers.
+
+- company_name: Vodacom, SA
+  role: Software Engineer Intern
+  duration: April 2021 - July 2021
+  description: I was in a group of Software Engineers, and I contributed to the frontend components using React JS for a Full Stack Application
+  technologies: JavaScript, React JS, Java, Springboot, and we followed the Agile Development methodology.
+  key_achievements:
+    - Being a contributor to a major project in Vodacom. It was my first-ever internship and I learned a lot.
+
+- company_name: WeThinkCode NPC
+  role: Graphic Designer
+  duration: August 2020 - March 2022
+  description: It was my responsibility to design graphic elements for print and digital media, and I also worked closely with the marketing team, 
+    videography team, and content writing team to create quality, effective designs.
+  key_achievements: 
+    - Fully rebranded WeThinkCode_, and left a very huge branding substantial mark.
+
