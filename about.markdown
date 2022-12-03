@@ -10,3 +10,5 @@ I have a unique ability to combine both logical and creative thinking to solve p
 
 As I am going up the Software journey, I am looking for opportunities
 that will help and push me grow in any way possible.
+
+{% include_relative _includes/journey-timeline.html %}

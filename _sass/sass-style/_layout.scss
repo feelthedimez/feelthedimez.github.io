@@ -145,11 +145,9 @@ input:checked + .slider:before {
 }
 
 
-// 073 001 2240
 .slider.round:before {
   border-radius: 50%;
 }
-
 
 
 .footer-col-wrapper {
@@ -187,7 +185,6 @@ input:checked + .slider:before {
  * Page content
  */
 
- 
 .page-content {
   padding: $spacing-unit 0;
   flex: 1;
@@ -313,3 +310,120 @@ input:checked + .slider:before {
     color: $text-color-light;
   }
  }
+
+ /**
+ * Timeline
+ */
+
+ .timeline {
+    position: relative;
+    padding-left: 4rem;
+    // margin: 0 0 0 10px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 3%;
+      width: 4px;
+      height: 95%;
+      background: $dark-background-color;
+    }
+
+    .timeline-container {
+      position: relative;
+      margin-bottom: 2.5rem;
+
+      .timeline-icon {
+          position: absolute;
+          left: -80px;
+          top: 60px;
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          text-align: center;
+          font-size: 1.6rem;
+          background: $bright-color;
+
+          i {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+          }
+
+        }
+
+        .timeline-body {
+          @include relative-font-size(1.35);
+          background: $dark-background-color;
+          border-radius: 15px;
+          padding: 30px 5px 20px 25px;
+          // box-shadow: 1px 3px 9px rgba(0,0,0, .1);
+
+          &:before {
+            content: '';
+            background: inherit;
+            display: block;
+            position: absolute;
+          }
+
+          .timeline-title {
+            // margin-bottom: 1.4rem;
+
+            .badge {
+              @include relative-font-size(1.8);
+            }
+          }
+
+          .timeline-subtitle {
+            font-weight: 300;
+            font-style: italic;
+            opacity: .4;
+            margin-top: 16px;
+            font-size: 11px;
+          }
+
+        }
+    }
+
+ }
+
+ @include media-query($on-palm) {
+
+  .timeline {
+    position: relative;
+    padding-left: 4rem;
+
+    &:before {
+      left: 5%;
+      top: 3%;
+      height: 95%;
+    }
+
+    .timeline-container {
+      position: relative;
+      margin-bottom: 2.5rem;
+
+      .timeline-icon {
+          position: absolute;
+          left: -60px !important;
+          top: 60px;
+        }
+
+        .timeline-body {
+          @include relative-font-size(1.1);
+
+          .timeline-title {
+            .badge {
+              @include relative-font-size(1.4);
+            }
+          }
+
+        }
+
+    }
+
+ }
+
+}
