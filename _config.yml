@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Zandile Langa
+title: Tebogo Tema
 email: dime.tema@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Tebogo Tema is a software engineer in progress. The purpose of this blog/website is to document my journey, 
