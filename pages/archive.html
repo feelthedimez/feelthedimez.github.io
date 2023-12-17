@@ -1,22 +1,20 @@
 ---
 layout: default
+title: Archive
 permalink: /archive/
 ---
 
 {% if site.posts.size > 0 %}
 
 <div class="all_posts">
-  <h2 class="post-list-heading">
-    {{ page.list_title | default: "All posts" }}
-  </h2>
+  <h2 class="post-list-heading">{{ page.list_title | default: "All posts" }}</h2>
   <ul class="post-list">
-    {%- for post in site.posts -%} {% if post.archived %}
-
+    {%- for post in site.posts -%}
+    {%- if post.archive -%}
     <li>
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y"
-      -%}
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       <span class="post-meta">{{ post.date | date: date_format }}</span>
-
+      
       {% if post.tags.size > 0 %}
       <span class="post-meta tags">{{ post.tags | sort | join: " | " }} </span>
       {% endif %}
@@ -26,15 +24,18 @@ permalink: /archive/
           {{ post.title | escape }}
         </a>
       </h3>
-      <p>
-        {{ post.content | truncatewords: 45 }}
+      <p>{{ post.content | truncatewords: 45 }} 
         <a href="{{ post.url | relative_url }}">
           <span class="read-more">Read more</span>
         </a>
       </p>
-      {%- if site.show_excerpts -%} {{ post.excerpt }} {%- endif -%}
+      {%- if site.show_excerpts -%}
+        {{ post.excerpt }}
+      {%- endif -%}
     </li>
-
-    {%- endif -%} {%- endfor -%} {%- endif -%}
+    {%- endif -%}
+    {%- endfor -%}
   </ul>
 </div>
+
+{%- endif -%}
