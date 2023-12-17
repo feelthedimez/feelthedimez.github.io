@@ -3,7 +3,7 @@ layout: post
 title:  "Drifting away from my goals"
 date:   2022-04-20 01:24:00 +0200
 tags: [Goals, Passion, Code]
-permalink: /:title
+permalink: /archive/:title
 ---
 
 My last git commit was 20 days ago, and I was refactoring my domain code to be domain rich with objects. But I ended up introducing a lot of strings, I also overloaded my constructors with more than 5 arguments and so on because I was chasing a deadline; now I understand why there's a lot of bad code in massive codebases because the manager wanted results quick, quick. There's just a lot of bad code.
