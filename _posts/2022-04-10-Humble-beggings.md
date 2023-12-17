@@ -2,7 +2,7 @@
 layout: post
 title:  "Humble beginnings"
 date:   2022-04-04 19:08:00 +0200
-tags: [First Post, Start, Beginning]
+tags: [First Post]
 archive: false
 permalink: /:title
 ---

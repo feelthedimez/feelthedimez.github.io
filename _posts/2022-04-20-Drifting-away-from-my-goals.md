@@ -2,7 +2,7 @@
 layout: post
 title:  "Drifting away from my goals"
 date:   2022-04-20 01:24:00 +0200
-tags: [Goals, Passion, Code]
+tags: [Goals]
 archive: true
 permalink: /archive/:title
 ---

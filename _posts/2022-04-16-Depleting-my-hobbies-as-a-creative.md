@@ -2,7 +2,7 @@
 layout: post
 title:  "Depleting my hobbies as a creative"
 date:   2022-04-16 23:15:00 +0200
-tags: [Hobbies, Design, Creative]
+tags: [Hobbies]
 archive: true
 permalink: /archive/:title
 ---
