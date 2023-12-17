@@ -2,8 +2,8 @@
 
 // Define defaults for each variable.
 
-$base-font-family: 'Poppins', sans-serif !default;
-$base-font-size:   16px !default;
+$base-font-family: 'Source Code Pro', monospace, sans-serif !default;
+$base-font-size:   13px !default;
 $base-font-weight: 400 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
@@ -14,8 +14,8 @@ $secondary-color: #273044;
 $dark-background-color: #08090D;
 $bright-color: #EA7C59;
 
-$text-color:       #E8DFDF !default;
-$text-color-light: #cfd7db;
+$text-color:       rgb(194, 189, 189) !default;
+$text-color-light: #c1c8cb;
 
 
 $background-color: #12151C !default;

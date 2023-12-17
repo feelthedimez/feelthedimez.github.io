@@ -1,6 +1,18 @@
+- company_name: Sovtech Africa
+  role: Software Automation Engineer
+  duration: July 2023 - Present
+  description: I am a Software Automation Engineer at Sovtech. I am responsible for developing automation frameworks, 
+    and implementing automation in different projects.
+
+    I work in multiple projects; since Sovtech is a consultancy company, I work with different clients.
+
+  technologies: Typescript, Docker, Github Actions, GitLab Pipelines, Java, and more.
+  key_achievements: 
+    - I implemented automation in IoT projects, Bank Systems, and more.
+
 - company_name: Vodacom, SA
   role: Software Engineer
-  duration: April 2022 - Present
+  duration: April 2022 - July 2023
   description: I am currently in QAE (Quality Assurance Enablement) team. I am responsible for developing tools and processes 
     that QAs use in order to deliver their daily tasks. We developed an internal automation Framework and integrated it with Jenkins
     build pipelines.
