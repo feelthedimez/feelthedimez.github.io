@@ -4,9 +4,9 @@
   description: I am a Software Automation Engineer at Sovtech. I am responsible for developing automation frameworks, 
     and implementing automation in different projects.
 
-    I work in multiple projects; since Sovtech is a consultancy company, I work with different clients.
+    I work with different clients.
 
-  technologies: Typescript, Docker, Github Actions, GitLab Pipelines, Java, and more.
+  technologies: Typescript, Docker, Github Actions, GitLab Pipelines, Bitbucket Pipelines, Java, and more.
   key_achievements: 
     - I implemented automation in IoT projects, Bank Systems, and more.
 
