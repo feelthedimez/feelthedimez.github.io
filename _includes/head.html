@@ -2,8 +2,13 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  {%- seo -%} <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url
-  }}">
+  {% if page.featured_img %}
+  <meta
+    property="og:image"
+    content="{{ site.baseurl }}{{ page.featured_img }}"
+  />
+  {% endif %} {%- seo -%} <link rel="stylesheet" href="{{ "/assets/main.css" |
+  relative_url }}">
   <link rel="shortcut icon" type="image/png" href="/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <!-- CSS only -->
