@@ -140,12 +140,12 @@ on:
     branches: [main]
 
 jobs:
-    Basic-tests:
-        timeout-minutes: 10
-        runs-on: ubuntu-latest
-        steps:
-            - name: Demo Tests
-              run: echo 'Hello World'
+  Basic-tests:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - name: Demo Tests
+        run: echo 'Hello World'
 ```
 
 Commit your changes, push to git, and view the pipeline run.
@@ -262,7 +262,7 @@ And to store it into Github environmental variables, we need to pipe the results
 echo "PLAYWRIGHT_VERSION=$(yarn list --pattern @playwright/test --depth=0 | grep '@playwright/test' | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+')" >> $GITHUB_ENV
 ```
 
-> Important: The script only works for yarn packages. 
+> Important: The script only works for yarn packages.
 
 To complete the pipeline now, we need to add the following:
 
@@ -316,6 +316,16 @@ jobs:
       - name: Run Tests
         run: yarn playwright test truthy.spec.ts
 ```
+
+Commit, and push your code. Let the pipeline run for the first time:
+
+![Successful run for Cache Github Actions UI](/assets/blog-img/success-cache-run.png)
+
+Then re-run the pipeline to validate if the solution of caching dependencies actually worked:
+
+![Successful run for Cache Github Actions UI - 2](/assets/blog-img/success-cache-hit-run.png)
+
+The cache was a success, and now look at the execution time. All of them are now under 10 seconds; which is a huge improvement.
 
 ## Summary
 
