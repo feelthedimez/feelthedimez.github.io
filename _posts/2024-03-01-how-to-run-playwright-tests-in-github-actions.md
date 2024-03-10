@@ -2,7 +2,7 @@
 layout: post
 title: "Power Up Your Pipeline: Playwright Tests with Github"
 date: 2024-02-04 22:32:00 +0200
-tags: [Software Engineering]
+tags: [Software Engineering, Github Actions, Cache, Playwright]
 archive: false
 permalink: /:title
 featured_img: assets/img/featured-img-how-to-run-github-actions.png
