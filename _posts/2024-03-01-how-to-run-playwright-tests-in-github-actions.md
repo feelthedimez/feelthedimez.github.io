@@ -145,7 +145,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Demo Tests
-                run: echo 'Hello World'
+              run: echo 'Hello World'
 ```
 
 Commit your changes, push to git, and view the pipeline run.
