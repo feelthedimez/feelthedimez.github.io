@@ -8,7 +8,7 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 #
-# If you need help with YAML syntax, here are some quick references for you: 
+# If you need help with YAML syntax, here are some quick references for you:
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 #
@@ -27,9 +27,9 @@ baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://tebogotema.me" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: feelthedimez
 linkedin_username: Tebogo Tema
-github_username:  feelthedimez
+github_username: feelthedimez
 author: Tebogo Tema
-google_analytics: UA-225440578-2
+google_analytics: G-QM8BK0YT4S
 
 markdown: kramdown
 highlighter: rouge
@@ -41,9 +41,6 @@ copyright: Tebogo Tema
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-
-
-
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
