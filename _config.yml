@@ -24,7 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Tebogo Tema is a software engineer in progress. The purpose of this blog/website is to document my journey, 
   feelings, thoughts and everything inbetween regarding software & design.
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://tebogotema.me" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://feelthedimez.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: feelthedimez
 linkedin_username: Tebogo Tema
 github_username: feelthedimez
