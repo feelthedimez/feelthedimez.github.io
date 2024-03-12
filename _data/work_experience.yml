@@ -1,26 +1,29 @@
 - company_name: Sovtech Africa
   role: Software Automation Engineer
   duration: July 2023 - Present
-  description: I am a Software Automation Engineer at Sovtech. I am responsible for developing automation frameworks, 
+  description:
+    I am a Software Automation Engineer at Sovtech. I am responsible for developing automation frameworks,
     and implementing automation in different projects.
 
     I work with different clients.
 
   technologies: Typescript, Docker, Github Actions, GitLab Pipelines, Bitbucket Pipelines, Java, and more.
-  key_achievements: 
+  key_achievements:
     - I implemented automation in IoT projects, Bank Systems, and more.
+    - Introduced automation processes within projects that had 0 automation.
 
 - company_name: Vodacom, SA
   role: Software Engineer
   duration: April 2022 - July 2023
-  description: I am currently in QAE (Quality Assurance Enablement) team. I am responsible for developing tools and processes 
-    that QAs use in order to deliver their daily tasks. We developed an internal automation Framework and integrated it with Jenkins
-    build pipelines.
+  description:
+    I was previously in the QAE (Quality Assurance Enablement) team. I was responsible for
+    developing tools and processes that QAs used to deliver their daily tasks. We had developed an internal automation
+    Framework and integrated it with Jenkins build pipelines.
   technologies: GIT, Java, Python, Jenkins, Docker, JavaScript, Jira, Agile Development, and more.
-  key_achievements: 
-    - I was fully involved in the development of the Vodacom Summer Project Campaign. The project is very intensive and I was 
+  key_achievements:
+    - I was fully involved in the development of the Vodacom Summer Project Campaign. The project is very intensive and I was
       responsible for interpreting business specs and automating the logic.
-    - Improved and developed an internal testing framework that is used by the QAs. It has been integrated with Jenkins build 
+    - Improved and developed an internal testing framework that is used by the QAs. It has been integrated with Jenkins build
       pipelines, and Allure reports.
     - Helped a lot of people upskill in certain areas of their careers.
 
@@ -35,19 +38,20 @@
 - company_name: WeThinkCode NPC
   role: Graphic Designer
   duration: August 2020 - March 2022
-  description: It was my responsibility to design graphic elements for print and digital media, and I also worked closely with the marketing team, 
+  description:
+    It was my responsibility to design graphic elements for print and digital media, and I also worked closely with the marketing team,
     videography team, and content writing team to create quality, effective designs.
   technologies: Adobe Photoshop, Adobe Illustrator, Figma, Adobe Premiere Pro
-  key_achievements: 
+  key_achievements:
     - Fully rebranded WeThinkCode_, and left a very huge branding substantial mark.
-
 
 - company_name: Personal Business - <i>feelthedimez</i>
   role: Freelance Designer
   duration: 2019 - 2022
-  description: I was working as a Freelance designer for almost 2 years. I used to create static websites for clients, design, and brand their companies, 
+  description:
+    I was working as a Freelance designer for almost 2 years. I used to create static websites for clients, design, and brand their companies,
     and plan UI/UX design layouts with Figma. I also created e-commerce websites using WordPress.
   technologies: HTML, CSS, Vanilla JavaScript, Jekyll, WordPress, Adobe Photoshop, Adobe Illustrator, Figma, Adobe Premiere Pro
-  key_achievements: 
+  key_achievements:
     - I have learned self-discipline and time management. I worked with a lot of clients.
     - I improved my skillset and that improved my creativity a lot.
