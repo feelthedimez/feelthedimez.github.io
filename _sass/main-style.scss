@@ -2,38 +2,37 @@
 
 // Define defaults for each variable.
 
-$base-font-family: 'Source Code Pro', monospace, sans-serif !default;
-$base-font-size:   18px !default;
+$base-font-family: "Source Code Pro", monospace, sans-serif !default;
+$base-font-size: 18px !default;
 $base-font-weight: 400 !default;
-$small-font-size:  $base-font-size * 0.875 !default;
+$small-font-size: $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
 
-$spacing-unit:     30px !default;
+$spacing-unit: 30px !default;
 
 $secondary-color: #273044;
-$dark-background-color: #08090D;
-$bright-color: #EA7C59;
+$dark-background-color: #08090d;
+$bright-color: #ea7c59;
 
-$text-color:       rgb(194, 189, 189) !default;
+$text-color: rgb(194, 189, 189) !default;
 $text-color-light: #c1c8cb;
 
+$background-color: #12151c !default;
 
-$background-color: #12151C !default;
+$brand-color: #2a7ae2 !default;
 
-$brand-color:      #2a7ae2 !default;
-
-$grey-color:       #828282 !default;
+$grey-color: #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
-$grey-color-dark:  darken($grey-color, 25%) !default;
+$grey-color-light-2: lighten($grey-color, 20%) !default;
+$grey-color-dark: darken($grey-color, 25%) !default;
 
 $table-text-align: left !default;
 
 // Width of the content area
-$content-width:    950px !default;
+$content-width: 950px !default;
 
-$on-palm:          600px !default;
-$on-laptop:        800px !default;
-
+$on-palm: 600px !default;
+$on-laptop: 800px !default;
 
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
@@ -52,8 +51,4 @@ $on-laptop:        800px !default;
 }
 
 // Import partials.
-@import
-  "sass-style/base",
-  "sass-style/layout",
-  "sass-style/syntax-highlighting"
-;
+@import "sass-style/base", "sass-style/layout", "sass-style/syntax-highlighting";
