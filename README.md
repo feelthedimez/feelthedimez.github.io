@@ -12,6 +12,7 @@ To set up the project locally, follow these steps:
 Ensure you have the following installed:
 - [Ruby](https://guides.rubyonrails.org/install_ruby_on_rails.html) (version 3.4.1 or higher)
 - [Bundler](https://bundler.io/)
+- [Jekyll Ruby Install](https://jekyllrb.com/docs/installation/macos/)
 
 ### Steps
 1. Clone the repository:
