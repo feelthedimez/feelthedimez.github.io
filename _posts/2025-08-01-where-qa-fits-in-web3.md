@@ -139,4 +139,6 @@ Want a pro tip? Logs are your friend. I’ve written tests that pass/fail based 
 
 QA in blockchain isn’t about pixel-perfect UIs. It’s about trust. It’s about making sure the distributed system behaves exactly as intended, across time, space, and cryptographic boundaries. You’ll need development experience, an eye for test edge cases, and a willingness to explore low-level behavior.
 
-It’s not easy. But it’s necessary.
+It’s not easy. But it’s necessary. 
+
+AND PLEASE, DON'T BUILD IN RUST! 😂
