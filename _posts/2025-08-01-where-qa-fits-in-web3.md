@@ -14,7 +14,7 @@ If you've ever wondered what it really means to test a blockchain project; beyon
 
 QA in Web3 isn't about contracts, and MetaMask popus. It's about verifying decentralised systems, authenticating cryptographic identities, and making sure nodes don't just exist, but behave correctly. It's not for the faint of heart, and also not as complex as you think.
 
-Let me walk you through how I led QA within a blockchain product, aproached testing blockchain systems, especially Ethereum-based ones.
+Let me walk you through how I led QA within a blockchain product, approached testing blockchain systems, especially Ethereum-based ones.
 
 ## What Makes QA in Blockchain Different?
 
@@ -29,7 +29,7 @@ In blockchain?
 
 This changes how QA fits into the picture. It's not just "does it work?", it's "does it behave correctly across multiple peers, states, and cryptographyic boundries?"
 
-## What are really testing?
+## What are we really testing?
 
 A commong misconception I discovered while I was doing research for this project: _QA in blockchain = testing smart contracts, dApps, MetaMask integration_. It's more layered than that.
 
