@@ -2,7 +2,7 @@
 layout: post
 title: "Being Intentional"
 date: 2026-02-20 10:00:00 +0200
-tags: [personal]
+tags: [personal, growth]
 archive: false
 permalink: /:title
 ---

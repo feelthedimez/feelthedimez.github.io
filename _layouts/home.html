@@ -17,38 +17,42 @@ layout: default
   {%- if site.posts.size > 0 -%}
     <div class="all_posts">
       <h2 class="post-list-heading">{{ page.list_title | default: "All posts" }}</h2>
-      <ul class="post-list">
-        {%- for post in site.posts -%}
-        {%- unless post.archive -%}
-        <li>
-          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-          <span class="post-meta">{{ post.date | date: date_format }}</span>
-          
-          {% if post.tags.size > 0 %}
-          <span class="post-meta tags">{{ post.tags | sort | join: " | " }} </span>
-          {% endif %}
-  
-          <h3>
-            <a class="post-link" href="{{ post.url | relative_url }}">
-              {{ post.title | escape }}
-            </a>
-          </h3>
+      {%- assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" -%}
+      {%- for year_group in posts_by_year -%}
+        <h1 class="year-heading">{{ year_group.name }}</h1>
+        <ul class="post-list">
+          {%- for post in year_group.items reversed -%}
+          {%- unless post.archive -%}
+          <li>
+            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+            <span class="post-meta">{{ post.date | date: date_format }}</span>
+            
+            {% if post.tags.size > 0 %}
+            <span class="post-meta tags">{{ post.tags | sort | join: " | " }} </span>
+            {% endif %}
+    
+            <h3>
+              <a class="post-link" href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+              </a>
+            </h3>
 
-          {% assign content_without_img = post.content | replace: '<img', '<not-an-img' %}
-          <p class="post-content">{{ content_without_img | truncatewords: 45 }} 
-            <a href="{{ post.url | relative_url }}">
-              <span class="read-more">Read more</span>
-            </a>
-          </p>
+            {% assign content_without_img = post.content | replace: '<img', '<not-an-img' %}
+            <p class="post-content">{{ content_without_img | truncatewords: 45 }} 
+              <a href="{{ post.url | relative_url }}">
+                <span class="read-more">Read more</span>
+              </a>
+            </p>
 
-          
-          {%- if site.show_excerpts -%}
-            {{ post.excerpt }}
-          {%- endif -%}
-        </li>
-        {%- endunless -%}
-        {%- endfor -%}
-      </ul>
+            
+            {%- if site.show_excerpts -%}
+              {{ post.excerpt }}
+            {%- endif -%}
+          </li>
+          {%- endunless -%}
+          {%- endfor -%}
+        </ul>
+      {%- endfor -%}
     </div>
   {%- endif -%}
 
