@@ -5,7 +5,10 @@ date: 2026-04-09 18:11:00 +0200
 tags: [RAG | Python | AI | LangChain | Obsidian | MCP]
 archive: false
 permalink: /:title
+featured_img: assets/img/featured-vector-embeddings.png
 ---
+
+![Featured Image]({{page.featured_img | relative_url}})
 
 Every time I start a new session with an AI agent, I spend the first 10 minutes re-explaining my project. The architecture. The decisions I've already made. The context that lives in my head but not in the conversation.
 

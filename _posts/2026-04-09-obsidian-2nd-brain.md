@@ -5,7 +5,10 @@ date: 2026-04-09 18:11:00 +0200
 tags: [Obsidian, Knowledge Management, Productivity, AI]
 archive: false
 permalink: /:title
+featured_img: assets/img/featured-2nd-brain-obsidian.png
 ---
+
+![Featured Image]({{page.featured_img | relative_url}})
 
 Imagine having a second brain. One that stores everything you've ever learned, every problem you've ever solved, every decision you've ever made. And when you need something, you just ask it.
 
