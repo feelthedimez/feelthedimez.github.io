@@ -1,6 +1,25 @@
-- company_name: Scrums.com (formely Sovtech Africa)
+- company_name: Scrums.com
+  role: Senior Automation Engineer
+  duration: Feb 2026 - Present
+  description: |
+    Building test infrastructure and CI/CD pipelines that help teams ship faster and better. 
+    Specialising in automation frameworks, distributed system testing (Web2 & Web3), and scaling what matters. 
+    I am also responsible for putting systems and processes in place for the QA foundation.
+    As an AI enthusiast and champion, I integrate AI-driven solutions to advance automation and testing practices.
+  responsibilities:
+    - Design and maintain automation frameworks and CI/CD pipelines (GitHub Actions, Jenkins, GitLab Pipelines, Bitbucket)
+    - Implement automation across diverse projects and clients, from IoT systems to banking infrastructure
+    - Architect layered testing strategies for Web2 and Web3 systems
+    - Develop automated test suites covering unit, integration, and end-to-end scenarios
+    - Introduce automation processes in projects starting from zero automation coverage
+    - Foster a culture of automation and process improvement within the organisation
+    - Constantly explore innovative tools and techniques to enhance automation capabilities
+    - AI enthusiast and champion, integrating AI-driven solutions to advance automation and testing practices
+  technologies: Typescript, Docker, Github Actions, GitLab Pipelines, Bitbucket Pipelines, Java, Web2, Web3, AI
+
+- company_name: Scrums.com
   role: Software Automation Engineer
-  duration: July 2023 - Present
+  duration: July 2023 - Jan 2026
   description:
     I am a Software Automation Engineer at Scrums.com. I am responsible for developing automation frameworks,
     and implementing automation in different projects.

@@ -8,14 +8,27 @@
         <div class="timeline-body">
             <h3 class="timeline-title"><span class="badge">{{ journey.role }}</span></h3>
             <h4 class="company-name">{{ journey.company_name }} | {{ journey.duration }}</h4>
-            <p class="description">{{ journey.description }}</p>
-            <p class="technology">Technologies: {{ journey.technologies }}</p>
-            <h3>Key Achievements:</h3>
-            {% for point in journey.key_achievements %}
+            <p class="description">{{ journey.description | markdownify }}</p>
+
+            {% if journey.responsibilities %}
+            <h3>Responsibilities:</h3>
             <ul>
+                {% for point in journey.responsibilities %}
                 <li><p>{{ point }}</p></li>
+                {% endfor %}
             </ul>
-            {% endfor %}
+            {% endif %}
+
+            <p class="technology"><b>Technologies:</b> {{ journey.technologies }}</p>
+
+            {% if journey.key_achievements %}
+            <h3>Key Achievements:</h3>
+            <ul>
+                {% for point in journey.key_achievements %}
+                <li><p>{{ point }}</p></li>
+                {% endfor %}
+            </ul>
+            {% endif %}
         </div>
     </div>
 
