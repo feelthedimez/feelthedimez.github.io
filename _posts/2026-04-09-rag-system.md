@@ -8,7 +8,7 @@ permalink: /:title
 featured_img: assets/img/featured-vector-embeddings.png
 ---
 
-> I am workon on [production AI agent infrastructure](https://www.scrums.com/ai-agent-platform) at Scrums.com. This post covers a personal RAG system I built for my own coding sessions. Same pattern, different governance.
+> I am working on a [production AI agent infrastructure](https://www.scrums.com/ai-agent-platform) at Scrums.com. This post covers a personal RAG system I built for my own coding sessions. Same pattern, different governance.
 
 ![Featured Image]({{page.featured_img | relative_url}})
 

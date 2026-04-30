@@ -1,37 +1,40 @@
 <h1 class="experience-title">Work Experience</h1>
 <div class="timeline">
-    {% for journey in site.data.work_experience %}
-    <div class="timeline-container primary">
-        <div class="timeline-icon">
-            <i class=""></i>
-        </div>
-        <div class="timeline-body">
-            <h3 class="timeline-title"><span class="badge">{{ journey.role }}</span></h3>
-            <h4 class="company-name">{{ journey.company_name }} | {{ journey.duration }}</h4>
-            <p class="description">{{ journey.description | markdownify }}</p>
-
-            {% if journey.responsibilities %}
-            <h3>Responsibilities:</h3>
-            <ul>
-                {% for point in journey.responsibilities %}
-                <li><p>{{ point }}</p></li>
-                {% endfor %}
-            </ul>
-            {% endif %}
-
-            <p class="technology"><b>Technologies:</b> {{ journey.technologies }}</p>
-
-            {% if journey.key_achievements %}
-            <h3>Key Achievements:</h3>
-            <ul>
-                {% for point in journey.key_achievements %}
-                <li><p>{{ point }}</p></li>
-                {% endfor %}
-            </ul>
-            {% endif %}
-        </div>
+  {% for journey in site.data.work_experience %}
+  <div class="timeline-container primary">
+    <div class="timeline-icon">
+      <i class=""></i>
     </div>
+    <div class="timeline-body">
+      <h3 class="timeline-title">
+        <span class="badge">{{ journey.role }}</span>
+      </h3>
+      <h4 class="company-name">
+        {{ journey.company_name }} | {{ journey.duration }}
+      </h4>
+      <p class="description">{{ journey.description | markdownify }}</p>
 
-    {% endfor %}
+      {% if journey.responsibilities %}
+      <h3>Responsibilities:</h3>
+      <ul>
+        {% for point in journey.responsibilities %}
+        <li><p>{{ point }}</p></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
 
+      <p class="technology"><b>Technologies:</b> {{ journey.technologies }}</p>
+
+      {% if journey.key_achievements %}
+      <h3>Key Achievements:</h3>
+      <ul>
+        {% for point in journey.key_achievements %}
+        <li><p>{{ point }}</p></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </div>
+
+  {% endfor %}
 </div>
