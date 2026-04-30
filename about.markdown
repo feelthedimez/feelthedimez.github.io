@@ -4,7 +4,7 @@ title: About Me
 permalink: /about/
 ---
 
-I am a software automation engineer with a focus on designing, implementing, and maintaining automated solutions to optimize the software development process. I currently work as a software engineer at [Scrums.com, The Software Engineering Orchestration Platform (SEOP)](https://www.scrums.com).
+I am a software automation engineer with a focus on designing, implementing, and maintaining automated solutions to optimize the software development process. I currently work as a software engineer at **[_Scrums.com_, The Software Engineering Orchestration Platform (SEOP)](https://www.scrums.com)**.
 
 My expertise includes utilizing tools such as Jenkins for continuous integration and continuous deployment (CI/CD) and a keen interest in AWS and cloud-based infrastructure to create scalable and reliable software systems.
 
