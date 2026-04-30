@@ -8,6 +8,8 @@ permalink: /:title
 featured_img: assets/img/featured-vector-embeddings.png
 ---
 
+> I am workon on [production AI agent infrastructure](https://www.scrums.com/ai-agent-platform) at Scrums.com. This post covers a personal RAG system I built for my own coding sessions. Same pattern, different governance.
+
 ![Featured Image]({{page.featured_img | relative_url}})
 
 Every time I start a new session with an AI agent, I spend the first 10 minutes re-explaining my project. The architecture. The decisions I've already made. The context that lives in my head but not in the conversation.
