@@ -21,7 +21,7 @@ layout: default
       {%- for year_group in posts_by_year -%}
         <h1 class="year-heading">{{ year_group.name }}</h1>
         <ul class="post-list">
-          {%- for post in year_group.items reversed -%}
+          {%- for post in year_group.items -%}
           {%- unless post.archive -%}
           <li>
             {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
