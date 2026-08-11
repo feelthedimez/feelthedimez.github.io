@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Expensive Half Isn't the AI"
-date: 2026-08-10W 19:40:00 +0200
+date: 2026-08-11 14:00:00 +0200
 tags: [AI | Knowledge Management | Business | Opinion]
 archive: false
 permalink: /:title
