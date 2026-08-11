@@ -242,8 +242,16 @@ input:checked + .slider:before {
 .post-content {
   margin-bottom: $spacing-unit;
 
+  a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    &:hover {
+      text-decoration-thickness: 2px;
+    }
+  }
+
   p li {
-    // text-align: justify;
     @include relative-font-size(1);
   }
 
