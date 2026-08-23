@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Expensive Half Isn't the AI"
+title: "The Expensive Part of AI Isn't the AI"
 date: 2026-08-11 14:00:00 +0200
 category: AI & Knowledge
 tags: [AI, Knowledge Management, Business, Opinion]
@@ -11,89 +11,83 @@ featured_img: assets/img/featured-expensive-half.png
 
 ![Featured Image]({{page.featured_img | relative_url}})
 
-Last month I ran 124 working sessions with an AI coding assistant. 117 of them opened the same way: not with a prompt about the task, but with a query against my own notes.
+Last month I ran 124 working sessions with an AI coding assistant. 117 of them started with me asking something about my own notes before I even got into the actual task.
 
-That ratio is the whole post.
+I originally just wanted a way to search through my own notes without having to remember where I put everything. Then I added more notes, then documentation, then code, and eventually I ended up with a system that I use almost every time I work with AI.
 
-The obvious explanation for getting more done with AI is the AI. I use it every day, all day. The obvious explanation is wrong. Not about the model, but about which half of the arrangement is doing the work.
+It made me realise that the thing making the AI useful wasn't really the AI. It was everything I had written down before using it.
 
-## It Wasn't the AI
+## I've Been Writing Things Down for a While
 
-Every engineer reading this can buy the exact subscription I have. Same models. Same tools. Same price.
+I've written about this before in [What If You Could Query Your Own Brain?](https://feelthedimez.github.io/what-if-you-could-query-your-own-brain/).
 
-So the tool can't be the advantage. If the thing you're paying for is available to everyone at the same cost, it's a commodity, and commodities don't create advantages. They remove them.
+The idea was pretty simple. I've been using Obsidian as a second brain because I don't trust myself to remember everything I've learnt or every problem I've solved. If I fix a weird bug today, there is a good chance I'll forget exactly what I did six months from now. So I started writing those things down.
 
-What differs is what the tool knows about your work.
+Not just the solution, but the problem, what I tried, what didn't work and why I eventually settled on the solution I did. Over time, that became quite a lot of information. That's where AI became interesting.
 
-Mine knows a lot. Not because it runs a better model, but because there are months of written-down decisions sitting behind it in a form it can actually read.
+Instead of just asking an AI model a question and getting an answer based on its general knowledge, I could ask it something about my own work and let it search through everything I'd already written. It meant I didn't have to explain myself from scratch every time.
 
-## Context Is the Bottleneck
+## The Problem With Starting Every Conversation From Zero
 
-Here's the part that doesn't make it into the sales deck.
+One of the frustrating things about using AI for development is that it doesn't know your history.
 
-An AI assistant starts every conversation knowing nothing about your company. Not your architecture. Not why you picked the payment provider you picked. Not the bug someone fixed in March that everyone has since forgotten. Not the client constraint that makes the obvious solution the wrong one.
+It doesn't know why you chose a particular architecture. It doesn't know that you already tried three different solutions to a problem last month. It doesn't know why the obvious solution doesn't work for a particular client. It doesn't know about that strange production bug that took you an entire afternoon to figure out.
 
-So you explain. Every session. And when the conversation runs long enough, the model's working memory fills up, it loses the earlier context, and you explain again.
+So every time you start a new conversation, you end up transferring some of that context into the conversation again. I have done it a thousand times, and eventually I got tired.
 
-That re-explaining is the real cost, and almost nobody measures it. I did. Over the last month, a third of my sessions ended because the conversation ran out of room and had to restart. Every one of those was an opportunity to lose context I had already paid to establish.
+That's why I started building a RAG system around my notes. The idea wasn't particularly complicated. I wanted to be able to ask a question in normal language and have the system find the parts of my own notes that were relevant to it.
 
-The fix isn't a smarter model. It's giving the model somewhere to look.
-
-## How It Actually Works
-
-There's no magic in this. It's a filing system with a good index.
+The setup ended up using Postgres and pgvector as the database, CocoIndex to keep everything indexed, embeddings for semantic search, and MCP so that my AI tools could actually query the system.
 
 ![How it works, in six steps]({{ "assets/img/expensive-half-six-steps.png" | relative_url }})
 
-Six steps, start to finish:
+I had around 4,000 files in the system and roughly 30,446 pieces of text indexed. That included my notes and documentation, and eventually I decided to put my source code in there as well.
 
-1. **Everything written gets read** by a pipeline running in the background. Notes, documents, source code, all of it.
+That's where things got interesting.
 
-2. **It gets cut into small pieces.** A whole document is a bad answer. You want the paragraph that answers the question, not the forty pages around it. Code is split along syntax boundaries so a function doesn't get cut in half.
+## My Notes Weren't Enough
 
-3. **Each piece gets a label stapled to it** recording where it came from. This one matters far more than it sounds like it should.
+A lot of the questions I ask while working aren't purely about documentation.
 
-4. **Each piece is converted into an embedding**, a list of numbers standing for its meaning. Two pieces about the same idea land near each other even when they share no vocabulary at all.
+Take something like:
 
-5. **Your question gets the same treatment**, then two searches run in parallel. A vector search over those embeddings finds meaning. A full-text search finds exact strings. Each is weak where the other is strong, so both run and the two ranked lists are fused into one.
+> Why does the payment retry work this way?
 
-6. **The best pieces come back** with the file and line they came from.
+Part of that answer might be in a note where I explained why we chose a particular approach.
 
-The stack, briefly: **Postgres with the pgvector extension** as the single store, **CocoIndex** as the pipeline that keeps the index in step with the files, an **embedding model** to do the conversion in step four, and **MCP** (Model Context Protocol, the emerging standard for how assistants call external tools) as the interface the assistant talks to. One table, 30,446 pieces of text, roughly 4,000 files.
+The other part might be in the actual code that implements it.
 
-Step three is worth slowing down on. A paragraph torn out of a document means nothing alone. "Restart it after the migration." Restart what? Staple a label on first, saying _this came from the billing document, under the retry section_, and it becomes findable.
+If I only search my notes, I can find the reasoning but not the implementation. If I only search the code, I can find the implementation but not necessarily why it was written that way.
 
-Remember that step. It's about to break.
+So I wanted both in the same place.
 
-## Why I Added the Code
+I found CocoIndex while looking for a way to keep the code index up to date without having to re-process the entire codebase every time something changed. Around the same time I came across [How We Built Our Knowledge Base](https://www.cerebras.ai/blog/how-we-built-our-knowledge-base).
 
-The first version indexed notes only. It worked, and for nearly four months I thought that was the finished product.
+Their system was obviously operating at a completely different scale to mine. They were dealing with thousands of questions a day across engineering and infrastructure teams, while mine was just for me.
 
-What changed my mind was noticing how many of my questions were half-and-half. _Why does the payment retry work this way_ is partly a decision I wrote down and partly a function somebody wrote. Answering from the notes alone gives you the intent with no implementation. Answering from the code alone gives you the mechanism with no reason.
+But the underlying idea was surprisingly similar.
 
-The notes and the code needed to be in the same index.
+Both systems ended up using Postgres, pgvector, vector search, full-text search and MCP. Their implementation is much larger, but it was interesting seeing that some of the same design decisions appeared naturally at completely different scales.
 
-That's when I found [CocoIndex](https://cocoindex.io), an open-source framework built for exactly this: keeping embeddings of a codebase current without re-processing everything on every commit. I got there through _How We Built Our Knowledge Base_, written by Isaac Tai, Daniel Kim and Mike Gao at Cerebras, which is worth reading in full if this is your problem too.
+## The Code Was There, But I Couldn't Find It
 
-What struck me was how closely their architecture matched the one I'd landed on independently, at a wildly different scale. By their own account they serve 15,000 questions a day across chip design, data centre operations and inference teams. I serve one person. And we both ended up with a single Postgres table, pgvector for the embeddings, full-text and vector search fused together, per-repository config files with allowlists and denylists, and MCP as the way agents reach it.
+After adding the code to the index, I started testing it with questions I would normally ask while working.
 
-When a company that size and a person working alone converge on the same shape, that's usually a sign the shape is right rather than a sign either of us is clever.
+One of those questions was:
 
-## Then It Stopped Working
+> Where is the payment signature generated?
 
-So I rebuilt it with the code included, ran it for a while, and noticed something.
+The system returned eight documents about payments. It returned no code.
 
-It was very good at finding my notes. It was almost useless at finding my code.
+That was strange because the code was definitely there. It had been indexed. I could manually find the file myself. The problem turned out not to be the search. It was how I had stored the code.
 
-I asked it a pure location question. _Where is the payment signature generated?_ It returned eight documents about payments and zero lines of code, even though the file it wanted was indexed and sitting right there.
+My notes already had useful information attached to them. A note had a title, headings and the context around where a particular piece of information came from.
 
-That's a bad failure. Not "I couldn't find anything". That's obvious, and you go looking yourself. This was confident and wrong. A real answer, from a real document, that wasn't what I asked for.
+The code didn't have any of that.
 
-The cause was step three. My notes carried their titles and headings into that label. My code carried nothing. Every function in every repository went in as an anonymous fragment with no record of where it lived or what it belonged to.
+I was taking functions out of files and putting them into the index without enough information about where they came from. The search could understand the contents of the function, but it didn't have enough context around it.
 
-The search was fine. The filing was broken. And I would never have found it by tuning the search, because the search was never the problem.
-
-Once code chunks got the same label notes had always received:
+Once I started attaching that information to the code chunks as well, the results improved quite a bit.
 
 | Measure                                             | Before | After  |
 | --------------------------------------------------- | ------ | ------ |
@@ -101,19 +95,25 @@ Once code chunks got the same label notes had always received:
 | Code appearing in results, implementation questions | 8%     | 44%    |
 | Implementation questions with code ranked first     | 2 of 6 | 4 of 6 |
 
-## The Number That Lied
+## Then I Tested It Properly
 
-This is the part I'd want to read if I were deciding whether to fund something like this.
+Once I had fixed that, I wanted to see how well the system actually worked.
 
-Once it was fixed, I built a proper test. Sixty-three questions spanning every part of one system, each with a recorded correct answer. Then I scored it.
+So I made a test with 63 questions covering different parts of one of my systems. Each question had a correct answer that I could use to measure whether the search was returning the right information.
 
-It got 100%. Every question, correct answer in the top five, no misses.
+The first result was 100%. Every question had the correct answer somewhere in the top five results. It was also completely misleading.
 
-I didn't believe it, and I was right not to.
+The problem was how I'd written the questions.
 
-I had written those questions by reading the headings in my own documents. And the system, thanks to the fix above, now indexes those exact headings. So I had built a test that handed the system its own answer key. It scored perfectly because it was matching text against a near-copy of itself.
+I had created most of them by looking at the headings in my own documents and turning those headings into questions.
 
-So I rewrote the questions the way somebody would actually ask them, deliberately avoiding the vocabulary the documents used, describing symptoms instead of naming concepts.
+So if one of my documents had a heading about payment retries, I would create a question about payment retries.
+
+The system was essentially being tested using the same language that was already sitting inside the documents.
+
+So I rewrote the questions. Instead of using the terminology from my documents, I tried to ask them more naturally. I described symptoms or problems without necessarily using the same words I'd used when writing the original documentation.
+
+The results were much more realistic.
 
 | Measure                        | Questions taken from my own headings | Questions phrased naturally |
 | ------------------------------ | ------------------------------------ | --------------------------- |
@@ -121,57 +121,47 @@ So I rewrote the questions the way somebody would actually ask them, deliberatel
 | Correct answer in the top five | 100%                                 | 65%                         |
 | Correct answer in the top ten  | 100%                                 | 74%                         |
 
-The right-hand column is the real one. It's what I work from now.
+The second column is the one I actually care about. That's much closer to how I use the system in real life.
 
-I'll go further. When I audited the failures, five of the nine were my fault rather than the system's. I had recorded the wrong document as the correct answer, one that looked like it covered the topic but never actually mentioned it.
+And when I went through the failures manually, five of the nine failures were actually caused by me. I had recorded the wrong document as the correct answer because it looked like it covered the topic, even though it didn't actually contain the answer.
 
-None of this surfaces if you don't check. Nothing about a benchmark announces that it's measuring itself. You have to go looking.
+That was another reminder that measuring these systems is harder than it looks. You can get a very impressive number if you aren't careful about what you're measuring.
 
-If somebody demos an AI system to you and quotes a number, ask who wrote the questions.
+## This Changed How I Think About Documentation
 
-## Why Documentation Changed Jobs
+I've never really enjoyed writing documentation.
 
-Here's the shift I think most companies have missed.
+I understand why it's important, but it has always felt like one of those things you do because you're supposed to. You write it, eventually it becomes outdated, somebody finds it six months later and realises half of it isn't true anymore.
 
-Documentation used to be a cost. You wrote it because you were supposed to, it went stale within a quarter, and roughly nobody read it. The honest business case was compliance and onboarding, and even that was thin.
+The things I write down are now useful to something other than myself. If I document why I made a decision, an AI can eventually use that information when I'm working on something related. If I document a problem I solved six months ago, I don't have to remember exactly where I put the answer. If I document something about a system that I've built, I can give an AI access to that context without having to explain the entire system every time.
 
-That calculation has inverted.
+The more I write down, the more useful the system becomes. And that's where I think the real value is. A month of notes is useful. A year of notes becomes a pretty good reference library.
 
-Written-down knowledge is now the input that determines how much you get out of every AI tool you are already paying for. It isn't overhead any more. It's the fuel.
+A few years of notes starts becoming something else entirely because it contains the history of the decisions you've made and the problems you've actually encountered.
 
-And it compounds the way infrastructure does. A month of notes is a convenience. A year is a reference library. Three years is an asset a competitor with the same tools and the same budget cannot buy, because it's a record of decisions only your company made.
+Someone else can buy the same AI subscription I use. They can use the same models and the same tools. They can't buy the last five years of things I've learnt.
 
-Everybody is buying the tools. Almost nobody is buying the input.
+## AI Can Generate Documentation, But That's Not Quite the Same Thing
 
-## Someone Still Has to Write It Down
+This is also where I've become a bit sceptical of automatically generated documentation. I've tried using AI to generate documentation from code.
 
-I'd like to end somewhere more comfortable than this, but it wouldn't be true.
+But most of the time it's just explaining what the code already says.
 
-There's no shortcut. The system I've described works because there are hundreds of notes behind it, written by hand, over months, by someone who was tired and would rather have been doing something else.
+If a function is called `generatePaymentSignature()`, I don't particularly need AI to tell me that the function generates a payment signature. What I actually want to know is why we generate the signature that way. Why we didn't use the other approach. What problem caused us to add the extra validation. What happened when we tried something else.
 
-You can generate documentation automatically. I've tried it. It reads plausibly, restates what the code already says, and quietly goes stale because nothing keeps it honest.
+Those things usually aren't in the code. They're in someone's head. And once that person leaves the project, they're gone unless they were written down somewhere. That's the part that AI can't really generate for you.
 
-More documentation is not automatically better, either. A team at ETH Zurich evaluated the instruction files people write for coding agents and found they produced no improvement in task success at all, while adding over 20% to the cost of running the agent. Their conclusion was that such files should describe only minimal requirements. That is a different artifact from the retrievable notes I'm describing, but the lesson carries: volume is not the thing that helps.
+## So What Is the Expensive Part?
 
-The notes worth anything are the ones recording what the code cannot tell you. Why you rejected the other option. What the client actually meant. What you tried that didn't work.
+This is where I think the title comes from. The AI itself is becoming increasingly easy to access. You can subscribe to the same models that everyone else is using. The models are getting better, the context windows are getting bigger, and the tools around them are improving constantly.
 
-A machine can't write those, because it wasn't in the room.
+The difficult part is building the body of knowledge that you can actually give to those tools. That takes time. Someone has to write the notes. Someone has to explain the decisions. Someone has to document the weird bug that took half a day to solve. Someone has to record what didn't work.
 
-## Where to Start
+And most of the time, that person is you.
 
-You don't need what I built. Not yet, and possibly not ever.
+I've definitely been guilty of finishing a difficult problem and thinking, "I'll document this later."
 
-You need the habit that makes it worth building.
-
-Every time someone on your team solves something that took more than an afternoon, they write down what the problem was, what didn't work, and what fixed it. Not a summary. The actual investigation. Somewhere searchable, in plain text, that you own.
-
-That's it. That's the whole starting move.
-
-The tooling on top gets cheaper and better every quarter. I rebuilt mine twice this year and the second rebuild took a weekend. But no tool, at any price, in any year, recovers a decision nobody bothered to write down.
-
-In three years, the companies that have been writing things down will be compounding returns from AI tools. The ones that didn't will be buying the same subscriptions and wondering why it isn't working.
-
-That's the whole difference. It was never the model.
+Then I never do. The few times I actually did write it down, I've found myself coming back to those notes months later and thinking, "I'm glad I wrote this." That's probably the simplest reason I've continued building this system. Not because I want some massive AI knowledge platform. I just don't want to keep solving the same problems.
 
 ## Sources
 

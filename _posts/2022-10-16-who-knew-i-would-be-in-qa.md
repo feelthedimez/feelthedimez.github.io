@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Who knew I would be in QA and Automation"
-date:   2022-10-16 00:14:00 +0200
+title: "Who knew I would be in QA and Automation"
+date: 2022-10-16 00:14:00 +0200
 category: QA & Automation
 tags: [Career, Testing, Selenium, Appium]
 archive: false

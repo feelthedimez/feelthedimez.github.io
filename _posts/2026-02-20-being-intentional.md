@@ -14,7 +14,7 @@ Got a problem? Plug it into AI. Thinking of an idea? Validate it with AI. Need t
 
 That's where "being intentional" comes in.
 
-Life has been a lot lately. Media consumption is at an all-time high. AI news is 24/7, something new every single day. AI agents are becoming more and more prevalent, OpenClaw is a recent example of that. The internet is slowly turning into AI slop, content that looks like something but says nothing. 
+Life has been a lot lately. Media consumption is at an all-time high. AI news is 24/7, something new every single day. AI agents are becoming more and more prevalent, OpenClaw is a recent example of that. The internet is slowly turning into AI slop, content that looks like something but says nothing.
 
 Big American CEOs are on their press runs selling the AI dream, painting this picture of a future that conveniently benefits them first. And underneath all of that noise is this very real, very anxious feeling that your job might not exist in a few years. Maybe sooner. New tools, new people, changing roles. Now that AI is supposed to be our companion, the expectation is that you move 10x faster, do the work of 10 people, and still collect the same pay. It's a lot.
 
