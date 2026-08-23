@@ -3,10 +3,10 @@
 // Define defaults for each variable.
 
 $base-font-family: "Source Code Pro", monospace, sans-serif !default;
-$base-font-size: 18px !default;
+$base-font-size: 16px !default;
 $base-font-weight: 400 !default;
 $small-font-size: $base-font-size * 0.875 !default;
-$base-line-height: 1.5 !default;
+$base-line-height: 1.6 !default;
 
 $spacing-unit: 30px !default;
 
@@ -29,7 +29,8 @@ $grey-color-dark: darken($grey-color, 25%) !default;
 $table-text-align: left !default;
 
 // Width of the content area
-$content-width: 950px !default;
+// 760px gives roughly 72 characters per line at 16px monospace.
+$content-width: 760px !default;
 
 $on-palm: 600px !default;
 $on-laptop: 800px !default;

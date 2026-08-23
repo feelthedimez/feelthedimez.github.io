@@ -184,7 +184,7 @@ pre,
 code {
   /* Browsers default pre/code to their own monospace face (Courier); use the site font instead. */
   font-family: $base-font-family;
-  @include relative-font-size(0.8);
+  @include relative-font-size(0.9);
 }
 
 code {
