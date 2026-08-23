@@ -55,6 +55,27 @@
       color: $bright-color;
     }
   }
+
+  @include media-query($on-palm) {
+    .site-title {
+      @include relative-font-size(1.3);
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .nav-icons ion-icon {
+      @include relative-font-size(1.3);
+    }
+
+    .nav-icons ion-icon:not(:first-child) {
+      padding-left: 16px;
+    }
+
+    .nav-text-link {
+      @include relative-font-size(0.7);
+      padding-right: 16px;
+    }
+  }
 }
 
 /**

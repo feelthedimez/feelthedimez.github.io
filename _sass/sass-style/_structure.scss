@@ -276,6 +276,12 @@ $pill-border: #3a425a;
   }
 }
 
+/* The syntax theme bolds most token types, which makes whole blocks look
+   heavy in Source Code Pro. Keep the colours, drop the weight. */
+.highlighter-rouge .highlight span {
+  font-weight: $base-font-weight;
+}
+
 /* Work experience on the About page.
    Selectors are prefixed with .post-content so they beat the article
    heading sizes defined in _layout.scss. */
