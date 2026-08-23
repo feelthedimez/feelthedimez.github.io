@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Expensive Part of AI Isn't the AI"
+title: "Your Knowledge Is the Expensive Part"
 date: 2026-08-11 14:00:00 +0200
 category: AI & Knowledge
 tags: [AI, Knowledge Management, Business, Opinion]
