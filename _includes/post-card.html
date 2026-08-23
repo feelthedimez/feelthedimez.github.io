@@ -1,0 +1,26 @@
+{% comment %}
+Full post preview: date, category, title, excerpt, tag chips.
+Usage: {% include post-card.html post=post %}
+{% endcomment %}
+{%- assign post = include.post -%}
+{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+<article class="post-card">
+  <div class="post-meta-row">
+    <span class="post-meta">{{ post.date | date: date_format }}</span>
+    {%- if post.category -%}
+    <a class="post-category" href="{{ post.category | slugify | prepend: '/' | append: '/' | relative_url }}">{{ post.category }}</a>
+    {%- endif -%}
+  </div>
+
+  <h3 class="post-card__title">
+    <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+  </h3>
+
+  {%- assign content_without_blockquote = post.content | remove: "<blockquote>" | remove: "</blockquote>" -%}
+  {%- assign content_without_img = content_without_blockquote | replace: '<img', '<not-an-img' -%}
+  <p class="post-card__excerpt">{{ content_without_img | strip_html | truncatewords: 45 }}
+    <a href="{{ post.url | relative_url }}"><span class="read-more">Read more</span></a>
+  </p>
+
+  {% include tag-chips.html tags=post.tags %}
+</article>

@@ -2,6 +2,7 @@
 layout: post
 title: "What If You Could Query Your Own Brain?"
 date: 2026-04-09 18:11:00 +0200
+category: AI & Knowledge
 tags: [Obsidian, Knowledge Management, Productivity, AI]
 archive: false
 permalink: /:title

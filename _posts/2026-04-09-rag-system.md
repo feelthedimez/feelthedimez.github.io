@@ -2,7 +2,8 @@
 layout: post
 title: "I Built a RAG System So My AI Agent Stops Asking Me the Same Questions"
 date: 2026-04-09 18:11:00 +0200
-tags: [RAG | Python | AI | LangChain | Obsidian | MCP]
+category: AI & Knowledge
+tags: [RAG, Python, AI, LangChain, Obsidian, MCP]
 archive: false
 permalink: /:title
 featured_img: assets/img/featured-vector-embeddings.png

@@ -167,28 +167,104 @@ blockquote {
 /**
  * Code formatting
  */
+/* Rouge puts .highlight on both the wrapper div and the pre, so padding
+   lives on the pre only (the class selector outranks the bare `pre` rule). */
 .highlight {
-  padding: 1px 10px;
-  border-radius: 10px;
+  padding: 0;
+  border-radius: 8px;
   margin: 30px auto;
+}
+
+pre.highlight,
+.highlight pre {
+  padding: 22px 26px;
+  margin: 0;
 }
 pre,
 code {
-  @include relative-font-size(0.95);
+  /* Browsers default pre/code to their own monospace face (Courier); use the site font instead. */
+  font-family: $base-font-family;
+  @include relative-font-size(0.8);
 }
 
 code {
   padding: 1px 5px;
+  border-radius: 3px;
+  background-color: $secondary-color;
 }
 
 pre {
-  padding: 8px 12px;
+  padding: 22px 26px;
   overflow-x: auto;
+  line-height: 1.6;
+  border-radius: 8px;
 
   > code {
     border: 0;
-    padding-right: 0;
-    padding-left: 0;
+    padding: 0;
+    background: none;
+    font-size: inherit;
+  }
+}
+
+/**
+ * Fenced code blocks (Rouge output). main.js adds the copy button and label.
+ */
+.highlighter-rouge {
+  position: relative;
+  margin-bottom: $spacing-unit / 2;
+
+  .highlight {
+    border-radius: 8px;
+  }
+
+  pre.highlight {
+    margin: 0;
+  }
+}
+
+.code-toolbar {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.8;
+  transition: opacity 0.15s;
+
+  .highlighter-rouge:hover &,
+  &:focus-within {
+    opacity: 1;
+  }
+}
+
+.code-lang {
+  @include relative-font-size(0.6);
+  color: $grey-color;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.code-copy {
+  @include relative-font-size(0.6);
+  font-family: $base-font-family;
+  color: $text-color;
+  background: $secondary-color;
+  border: 1px solid lighten($secondary-color, 10%);
+  border-radius: 4px;
+  padding: 3px 8px;
+  cursor: pointer;
+
+  &:hover {
+    color: $bright-color;
+    border-color: $bright-color;
+  }
+
+  &.is-copied {
+    color: $background-color;
+    background: $bright-color;
+    border-color: $bright-color;
   }
 }
 

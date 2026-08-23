@@ -1,0 +1,38 @@
+---
+layout: default
+title: Tags
+permalink: /tags/
+---
+{% comment %}
+Every tag on the site: a cloud with counts, then one collapsible block per
+tag. The block matching the URL hash is opened by main.js.
+{% endcomment %}
+{%- assign tags_sorted = site.tags | sort -%}
+
+<div class="tags-page">
+  <header class="category-header">
+    <p class="eyebrow">Tags</p>
+    <h1 class="category-header__title">Tags</h1>
+    <p class="category-header__description">Every tag used on the blog. Click one to jump to its posts.</p>
+  </header>
+
+  <div class="tag-cloud">
+    {%- for tag in tags_sorted -%}
+    <a class="tag-chip tag-chip--large" href="#{{ tag[0] | slugify }}">{{ tag[0] }} ({{ tag[1].size }})</a>
+    {%- endfor -%}
+  </div>
+
+  <div class="post-list-compact">
+    {%- for tag in tags_sorted -%}
+    <details class="post-year" id="{{ tag[0] | slugify }}"{% if forloop.first %} open{% endif %}>
+      <summary class="post-year__summary">
+        <span class="post-year__name">{{ tag[0] }}</span>
+        <span class="post-year__count">{{ tag[1].size }} post{% if tag[1].size != 1 %}s{% endif %}</span>
+      </summary>
+      {%- for post in tag[1] -%}
+        {% include post-row.html post=post show_year=true show_category=true %}
+      {%- endfor -%}
+    </details>
+    {%- endfor -%}
+  </div>
+</div>

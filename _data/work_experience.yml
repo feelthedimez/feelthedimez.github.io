@@ -15,7 +15,7 @@
     - Foster a culture of automation and process improvement within the organisation
     - Constantly explore innovative tools and techniques to enhance automation capabilities
     - AI enthusiast and champion, integrating AI-driven solutions to advance automation and testing practices
-  technologies: Typescript, Docker, Github Actions, GitLab Pipelines, Bitbucket Pipelines, Java, Web2, Web3, AI
+  technologies: [TypeScript, Docker, GitHub Actions, GitLab Pipelines, Bitbucket Pipelines, Java, Web2, Web3, AI]
 
 - company_name: Scrums.com
   role: Software Automation Engineer
@@ -26,7 +26,7 @@
 
     I work with different clients.
 
-  technologies: Typescript, Docker, Github Actions, GitLab Pipelines, Bitbucket Pipelines, Java, and more.
+  technologies: [TypeScript, Docker, GitHub Actions, GitLab Pipelines, Bitbucket Pipelines, Java]
   key_achievements:
     - I implemented automation in IoT projects, Bank Systems, and more.
     - Introduced automation processes within projects that had 0 automation.
@@ -38,7 +38,7 @@
     I was previously in the QAE (Quality Assurance Enablement) team. I was responsible for
     developing tools and processes that QAs used to deliver their daily tasks. We had developed an internal automation
     Framework and integrated it with Jenkins build pipelines.
-  technologies: GIT, Java, Python, Jenkins, Docker, JavaScript, Jira, Agile Development, and more.
+  technologies: [Git, Java, Python, Jenkins, Docker, JavaScript, Jira, Agile]
   key_achievements:
     - I was fully involved in the development of the Vodacom Summer Project Campaign. The project is very intensive and I was
       responsible for interpreting business specs and automating the logic.
@@ -50,7 +50,7 @@
   role: Software Engineer Intern
   duration: April 2021 - July 2021
   description: I was in a group of Software Engineers, and I contributed to the frontend components using React JS for a Full Stack Application
-  technologies: JavaScript, React JS, Java, Springboot, and we followed the Agile Development methodology.
+  technologies: [JavaScript, React, Java, Spring Boot, Agile]
   key_achievements:
     - Being a contributor to a major project in Vodacom. It was my first-ever internship and I learned a lot.
 
@@ -60,7 +60,7 @@
   description:
     It was my responsibility to design graphic elements for print and digital media, and I also worked closely with the marketing team,
     videography team, and content writing team to create quality, effective designs.
-  technologies: Adobe Photoshop, Adobe Illustrator, Figma, Adobe Premiere Pro
+  technologies: [Adobe Photoshop, Adobe Illustrator, Figma, Adobe Premiere Pro]
   key_achievements:
     - Fully rebranded WeThinkCode_, and left a very huge branding substantial mark.
 
@@ -70,7 +70,7 @@
   description:
     I was working as a Freelance designer for almost 2 years. I used to create static websites for clients, design, and brand their companies,
     and plan UI/UX design layouts with Figma. I also created e-commerce websites using WordPress.
-  technologies: HTML, CSS, Vanilla JavaScript, Jekyll, WordPress, Adobe Photoshop, Adobe Illustrator, Figma, Adobe Premiere Pro
+  technologies: [HTML, CSS, JavaScript, Jekyll, WordPress, Adobe Photoshop, Adobe Illustrator, Figma, Adobe Premiere Pro]
   key_achievements:
     - I have learned self-discipline and time management. I worked with a lot of clients.
     - I improved my skillset and that improved my creativity a lot.

@@ -1,0 +1,32 @@
+{% comment %}
+Compact post list grouped by year. The newest year is open, older years
+are collapsed. Rows past `site.compact_list_initial_rows` in the newest
+year are hidden behind a "show more" button (JavaScript reveals them;
+without JavaScript every row shows).
+Usage: {% include post-list.html posts=posts show_category=true %}
+{% endcomment %}
+{%- assign posts_by_year = include.posts | group_by_exp: "post", "post.date | date: '%Y'" -%}
+{%- assign initial_rows = site.compact_list_initial_rows | default: 8 -%}
+<div class="post-list-compact" data-post-list>
+  {%- for year_group in posts_by_year -%}
+  <details class="post-year"{% if forloop.first %} open{% endif %}>
+    <summary class="post-year__summary">
+      <span class="post-year__name">{{ year_group.name }}</span>
+      <span class="post-year__count" data-year-count>{{ year_group.items.size }} post{% if year_group.items.size != 1 %}s{% endif %}</span>
+    </summary>
+    {%- assign overflow = 0 -%}
+    {%- for post in year_group.items -%}
+      {%- assign hide_row = false -%}
+      {%- if forloop.first == false and forloop.parentloop.first and forloop.index > initial_rows -%}
+        {%- assign hide_row = true -%}
+        {%- assign overflow = overflow | plus: 1 -%}
+      {%- endif -%}
+      {% include post-row.html post=post hidden=hide_row show_category=include.show_category %}
+    {%- endfor -%}
+    {%- if overflow > 0 -%}
+    <button class="post-year__more" type="button" data-show-more>Show {{ overflow }} more from {{ year_group.name }}</button>
+    {%- endif -%}
+  </details>
+  {%- endfor -%}
+  <p class="post-list-empty" data-empty hidden>No posts in this topic yet.</p>
+</div>

@@ -2,7 +2,8 @@
 layout: post
 title:  "Humble beginnings"
 date:   2022-04-04 19:08:00 +0200
-tags: [First Post]
+category: Personal
+tags: [First Post, Career]
 archive: false
 permalink: /:title
 ---

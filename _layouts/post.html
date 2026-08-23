@@ -4,16 +4,26 @@ layout: default
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        {{ page.date | date: date_format }}
-      </time>
+
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+    {%- assign words = page.content | strip_html | number_of_words -%}
+    {%- assign minutes = words | divided_by: 200 | at_least: 1 -%}
+    <div class="post-meta-row post-header__meta">
+      <time class="post-meta dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: date_format }}</time>
+      {%- if page.category -%}
+      <span class="post-meta">|</span>
+      <a class="post-category" href="{{ page.category | slugify | prepend: '/' | append: '/' | relative_url }}">{{ page.category }}</a>
+      {%- endif -%}
+      <span class="post-meta">|</span>
+      <span class="post-meta">{{ minutes }} min read</span>
       {%- if page.author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
-      {%- endif -%}</p>
+      <span class="post-meta">|</span>
+      <span class="post-meta" itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+      {%- endif -%}
+    </div>
+
+    {% include tag-chips.html tags=page.tags %}
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
@@ -22,6 +32,18 @@ layout: default
 
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
+  {%- endif -%}
+
+  {%- if page.category -%}
+    {%- assign related = site.posts | where: "category", page.category | where_exp: "p", "p.url != page.url" -%}
+    {%- if related.size > 0 -%}
+    <aside class="related-posts">
+      <h4 class="related-posts__heading">More in {{ page.category }}</h4>
+      {%- for post in related limit: 3 -%}
+        {% include post-row.html post=post show_year=true show_category=false %}
+      {%- endfor -%}
+    </aside>
+    {%- endif -%}
   {%- endif -%}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>

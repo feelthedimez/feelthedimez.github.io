@@ -1,0 +1,45 @@
+---
+layout: default
+---
+{% comment %}
+Category page. The page's front matter sets `category:` to a name from
+site.categories_list; the description and posts come from there.
+{% endcomment %}
+{%- assign cat = site.categories_list | where: "name", page.category | first -%}
+{%- assign posts = site.posts | where: "category", page.category -%}
+
+<div class="category-page">
+  <header class="category-header">
+    <p class="eyebrow">Topic</p>
+    <h1 class="category-header__title">{{ page.category }}</h1>
+    {%- if cat.description -%}
+    <p class="category-header__description">{{ cat.description }}</p>
+    {%- endif -%}
+
+    <div class="post-meta-row category-header__meta">
+      <span class="post-meta">{{ posts.size }} post{% if posts.size != 1 %}s{% endif %}</span>
+      {%- assign cat_tags = "" | split: "" -%}
+      {%- for post in posts -%}{%- assign cat_tags = cat_tags | concat: post.tags -%}{%- endfor -%}
+      {%- assign cat_tags = cat_tags | uniq | sort -%}
+      {%- if cat_tags.size > 0 -%}
+      {% include tag-chips.html tags=cat_tags %}
+      {%- endif -%}
+    </div>
+  </header>
+
+  {%- if posts.size > 0 -%}
+    <section class="latest-posts">
+      <h2 class="section-heading">Latest</h2>
+      {% include post-card.html post=posts.first %}
+    </section>
+
+    <section class="all_posts">
+      <h2 class="section-heading">All {{ page.category }} posts</h2>
+      {% include post-list.html posts=posts show_category=false %}
+    </section>
+  {%- else -%}
+    <p class="post-list-empty">Nothing here yet. Posts will show up as I write them.</p>
+  {%- endif -%}
+
+  <p class="archive-hint"><a href="{{ '/' | relative_url }}">Back to all posts</a></p>
+</div>

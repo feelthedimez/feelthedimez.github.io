@@ -1,40 +1,41 @@
-<h1 class="experience-title">Work Experience</h1>
-<div class="timeline">
-  {% for journey in site.data.work_experience %}
-  <div class="timeline-container primary">
-    <div class="timeline-icon">
-      <i class=""></i>
+{% comment %}
+Work experience list, driven by _data/work_experience.yml.
+Compact resume style: role, company and dates, short description,
+optional bullet lists, technologies as chips.
+{% endcomment %}
+<section class="experience">
+  <h2 class="experience__title">Work experience</h2>
+
+  {% for job in site.data.work_experience %}
+  <article class="experience-entry">
+    <div class="experience-entry__marker" aria-hidden="true"></div>
+
+    <h3 class="experience-entry__role">{{ job.role }}</h3>
+    <p class="experience-entry__where">{{ job.company_name }} <span class="experience-entry__sep">|</span> {{ job.duration }}</p>
+
+    {% if job.description %}
+    <div class="experience-entry__description">{{ job.description | markdownify }}</div>
+    {% endif %}
+
+    {% if job.responsibilities %}
+    <p class="experience-entry__label">Responsibilities</p>
+    <ul class="experience-entry__list">
+      {% for point in job.responsibilities %}<li>{{ point }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if job.key_achievements %}
+    <p class="experience-entry__label">Key achievements</p>
+    <ul class="experience-entry__list">
+      {% for point in job.key_achievements %}<li>{{ point }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if job.technologies %}
+    <div class="tag-chips experience-entry__tech">
+      {% for tech in job.technologies %}<span class="tag-chip">{{ tech }}</span>{% endfor %}
     </div>
-    <div class="timeline-body">
-      <h3 class="timeline-title">
-        <span class="badge">{{ journey.role }}</span>
-      </h3>
-      <h4 class="company-name">
-        {{ journey.company_name }} | {{ journey.duration }}
-      </h4>
-      <p class="description">{{ journey.description | markdownify }}</p>
-
-      {% if journey.responsibilities %}
-      <h3>Responsibilities:</h3>
-      <ul>
-        {% for point in journey.responsibilities %}
-        <li><p>{{ point }}</p></li>
-        {% endfor %}
-      </ul>
-      {% endif %}
-
-      <p class="technology"><b>Technologies:</b> {{ journey.technologies }}</p>
-
-      {% if journey.key_achievements %}
-      <h3>Key Achievements:</h3>
-      <ul>
-        {% for point in journey.key_achievements %}
-        <li><p>{{ point }}</p></li>
-        {% endfor %}
-      </ul>
-      {% endif %}
-    </div>
-  </div>
-
+    {% endif %}
+  </article>
   {% endfor %}
-</div>
+</section>

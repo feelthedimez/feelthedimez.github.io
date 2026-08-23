@@ -38,6 +38,27 @@ kramdown:
   input: GFM
 
 copyright: Tebogo Tema
+
+# Post categories. Every post sets `category:` to one of these names.
+# The page URL is the name slugified (QA & Automation -> /qa-automation/),
+# and each category has a matching page under pages/.
+categories_list:
+  - name: Software Engineering
+    description: Building software, the decisions behind it, and what I keep getting wrong.
+  - name: QA & Automation
+    description: Testing, test automation, CI pipelines, and making quality a habit instead of a gate.
+  - name: Homelab
+    description: Running a self-hosted cloud on a spare PC. Hardware, Linux, storage, networking, and the services I end up hosting.
+  - name: AI & Knowledge
+    description: Working with AI tools, building on top of them, and keeping a second brain that actually answers back.
+  - name: Personal
+    description: Career, growth, creativity, and the thoughts in between.
+
+# How many posts get a full excerpt on the home page.
+latest_posts_count: 3
+# Rows shown in the current year before "show more".
+compact_list_initial_rows: 8
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag

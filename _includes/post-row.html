@@ -1,0 +1,14 @@
+{% comment %}
+One-line post entry: date, title, category. Used in compact lists.
+Usage: {% include post-row.html post=post hidden=true show_year=true %}
+{% endcomment %}
+{%- assign post = include.post -%}
+<div class="post-row{% if include.hidden %} is-hidden{% endif %}" data-category="{{ post.category | slugify }}">
+  <time class="post-row__date" datetime="{{ post.date | date_to_xmlschema }}">
+    {%- if include.show_year -%}{{ post.date | date: "%b %Y" }}{%- else -%}{{ post.date | date: "%b %-d" }}{%- endif -%}
+  </time>
+  <a class="post-row__title" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+  {%- if post.category and include.show_category != false -%}
+  <a class="post-category post-row__category" href="{{ post.category | slugify | prepend: '/' | append: '/' | relative_url }}">{{ post.category }}</a>
+  {%- endif -%}
+</div>

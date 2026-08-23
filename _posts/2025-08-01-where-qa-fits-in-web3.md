@@ -2,7 +2,8 @@
 layout: post
 title: "Where QA Fits in Web3: A Beginner-Friendly Deep Dive"
 date: 2025-08-05 10:00:00 +0200
-tags: [Blockchain, Web3]
+category: QA & Automation
+tags: [Blockchain, Web3, Testing]
 archive: false
 permalink: /:title
 featured_img: assets/img/featured-img-qa-in-web3.png

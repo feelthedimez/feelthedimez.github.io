@@ -2,7 +2,8 @@
 layout: post
 title: "The Expensive Half Isn't the AI"
 date: 2026-08-11 14:00:00 +0200
-tags: [AI | Knowledge Management | Business | Opinion]
+category: AI & Knowledge
+tags: [AI, Knowledge Management, Business, Opinion]
 archive: false
 permalink: /:title
 featured_img: assets/img/featured-expensive-half.png

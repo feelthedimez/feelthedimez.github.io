@@ -3,39 +3,20 @@ layout: default
 title: Archive
 permalink: /archives/
 ---
+{%- assign posts = site.posts | where: "archive", true -%}
 
-{% if site.posts.size > 0 %}
+<div class="category-page">
+  <header class="category-header">
+    <p class="eyebrow">Archive</p>
+    <h1 class="category-header__title">Archived posts</h1>
+    <p class="category-header__description">Older and more personal writing, kept out of the main list but not deleted.</p>
+  </header>
 
-<div class="all_posts">
-  <h2 class="post-list-heading">{{ page.list_title | default: "Archived posts" }}</h2>
-  <ul class="post-list">
-    {%- for post in site.posts -%}
-    {%- if post.archive -%}
-    <li>
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      <span class="post-meta">{{ post.date | date: date_format }}</span>
-      
-      {% if post.tags.size > 0 %}
-      <span class="post-meta tags">{{ post.tags | sort | join: " | " }} </span>
-      {% endif %}
+  {%- if posts.size > 0 -%}
+    {% include post-list.html posts=posts show_category=true %}
+  {%- else -%}
+    <p class="post-list-empty">Nothing archived.</p>
+  {%- endif -%}
 
-      <h3>
-        <a class="post-link" href="{{ post.url | relative_url }}">
-          {{ post.title | escape }}
-        </a>
-      </h3>
-      <p>{{ post.content | truncatewords: 45 }} 
-        <a href="{{ post.url | relative_url }}">
-          <span class="read-more">Read more</span>
-        </a>
-      </p>
-      {%- if site.show_excerpts -%}
-        {{ post.excerpt }}
-      {%- endif -%}
-    </li>
-    {%- endif -%}
-    {%- endfor -%}
-  </ul>
+  <p class="archive-hint"><a href="{{ '/' | relative_url }}">Back to all posts</a></p>
 </div>
-
-{%- endif -%}

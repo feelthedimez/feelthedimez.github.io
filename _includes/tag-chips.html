@@ -1,0 +1,11 @@
+{% comment %}
+Clickable tag chips for one post. Each links to its block on /tags/.
+Usage: {% include tag-chips.html tags=post.tags %}
+{% endcomment %}
+{%- if include.tags.size > 0 -%}
+<div class="tag-chips">
+  {%- for tag in include.tags -%}
+  <a class="tag-chip" href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>
+  {%- endfor -%}
+</div>
+{%- endif -%}

@@ -1,0 +1,13 @@
+{% comment %}
+Category pills with post counts. Each pill links to its category page.
+On the home page a script also uses them to filter the list in place.
+Usage: {% include topic-pills.html posts=posts %}
+{% endcomment %}
+<nav class="topic-pills" aria-label="Topics" data-topic-pills>
+  <a class="topic-pill is-active" href="{{ '/' | relative_url }}" data-filter="all">All <span class="topic-pill__count">{{ include.posts.size }}</span></a>
+  {%- for cat in site.categories_list -%}
+    {%- assign count = include.posts | where: "category", cat.name | size -%}
+    <a class="topic-pill" href="{{ cat.name | slugify | prepend: '/' | append: '/' | relative_url }}" data-filter="{{ cat.name | slugify }}">{{ cat.name }} <span class="topic-pill__count">{{ count }}</span></a>
+  {%- endfor -%}
+  <a class="topic-pill topic-pill--link" href="{{ '/tags/' | relative_url }}">All tags</a>
+</nav>

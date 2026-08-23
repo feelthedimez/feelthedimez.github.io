@@ -2,7 +2,8 @@
 layout: post
 title: "Chaos Is Not the Problem"
 date: 2026-05-07 20:12:00 +0200
-tags: [Software | AI | Automation | Opinion]
+category: Software Engineering
+tags: [AI, Automation, Opinion]
 archive: false
 permalink: /:title
 featured_img: assets/img/featured-chaos.jpg
